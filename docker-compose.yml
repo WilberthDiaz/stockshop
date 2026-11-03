@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: stockshop-db
+    environment:
+      POSTGRES_USER: stockshop
+      POSTGRES_PASSWORD: stockshop123
+      POSTGRES_DB: stockshop
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
